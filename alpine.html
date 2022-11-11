@@ -11,11 +11,11 @@
     <div x-data="{
         posts: {},
         async getData() {
-            this.posts = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users')).json();
+            this.posts = await (await fetch('https://jsonplaceholder.typicode.com/posts')).json();
         }
     }">
         <button x-on:click="getData">Send get request</button>
-        Data returned: <strong x-text="posts[0].email">Placeholder</strong>
+        Data returned: <strong x-text="posts[0]">Placeholder</strong>
 
     </div>
 </body>
