@@ -9,13 +9,13 @@
 </head>
 <body>
     <div x-data="{
-        posts: {},
+        users: {},
         async getData() {
-            this.posts = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/')).json();
+            this.users = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/')).json();
         }
     }">
         <button x-on:click="getData">Send get request</button>
-        Data returned: <strong x-text="posts[0].id">Placeholder</strong>
+        Data returned: <strong x-text="users[0].id">Placeholder</strong>
 
     </div>
 </body>
