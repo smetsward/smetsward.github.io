@@ -1,1 +1,1 @@
-# smetsward..github.io
+# smetsward.github.io
