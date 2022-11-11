@@ -11,7 +11,7 @@
     <div x-data="{
         posts: {},
         async getData() {
-            this.posts = await (await fetch('https://jsonplaceholder.typicode.com/posts')).json();
+            this.posts = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/')).json();
         }
     }">
         <button x-on:click="getData">Send get request</button>
