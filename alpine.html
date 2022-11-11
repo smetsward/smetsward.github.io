@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alpine</title>
+
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
+
+</head>
+<body>
+    <div x-data="{
+        posts: {},
+        async getData() {
+            this.posts = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/')).json();
+        }
+    }">
+        <button x-on:click="getData">Send get request</button>
+        Data returned: <strong x-text="posts[0].title">Placeholder</strong>
+
+    </div>
+</body>
+
+</html>
