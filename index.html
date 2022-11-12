@@ -100,7 +100,7 @@
                             </thead>
                             <tbody>
 
-                                <tr x-data="{
+                                <div x-data="{
                                         users: {},
                                         async getData() {
                                             this.users = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')).json();
@@ -113,7 +113,7 @@
                                     <td data-label="IP Address">Data returned: <strong x-text="users[3].email">Placeholder</strong></td>
                                     <td data-label="Providers">Data returned: <strong x-text="users[4].email">Placeholder</strong></td>
                                     <td data-label="Date & Titme">Data returned: <strong x-text="users[5].email">Placeholder</strong></td>
-                                </tr>
+                                </div>
                                 <tr>
                                     <td data-label="Name">Robart Williams</td>
                                     <td data-label="Ticket Number">Robart Williams</td>
