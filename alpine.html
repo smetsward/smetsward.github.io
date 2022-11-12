@@ -48,13 +48,12 @@
         <template x-for="post in posts">
             <div x-text="post.title"></div>
         </template>
-        <button
-                @click="posts.push({title: 'New Post'})"
-                class="bg-blue-800 text-white px-4 py-2 rounded-lg mt-4"
-        >
+        <button @click="posts.push({title: 'New Post'})" class="bg-blue-800 text-white px-4 py-2 rounded-lg mt-4">
             Add Post
         </button>
     </div>
+
+
     <div x-data="{
         responsedata: null,
         email: null,

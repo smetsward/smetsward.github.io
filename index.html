@@ -99,13 +99,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td data-label="Name">Robart Williams</td>
-                                    <td data-label="Ticket Number">Robart Williams</td>
-                                    <td data-label="Issue Description">Can not Accoss Server</td>
-                                    <td data-label="IP Address">187.124.875.22</td>
-                                    <td data-label="Providers">Businesscon</td>
-                                    <td data-label="Date & Titme">25 / May / 2021 16:00</td>
+
+                                <tr x-data="{
+                                        users: {},
+                                        async getData() {
+                                            this.users = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')).json();
+                                        }
+                                    }">
+                                    <button x-on:click="getData">Send get request</button>
+                                    <td data-label="Name">Data returned: <strong x-text="users[0].email">Placeholder</strong> </td>
+                                    <td data-label="Ticket Number">Data returned: <strong x-text="users[1].email">Placeholder</strong></td>
+                                    <td data-label="Issue Description">Data returned: <strong x-text="users[2].email">Placeholder</strong></td>
+                                    <td data-label="IP Address">Data returned: <strong x-text="users[3].email">Placeholder</strong></td>
+                                    <td data-label="Providers">Data returned: <strong x-text="users[4].email">Placeholder</strong></td>
+                                    <td data-label="Date & Titme">Data returned: <strong x-text="users[5].email">Placeholder</strong></td>
                                 </tr>
                                 <tr>
                                     <td data-label="Name">Robart Williams</td>
