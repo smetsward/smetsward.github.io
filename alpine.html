@@ -23,7 +23,39 @@
 
 
 </div>
-<div x-data="{
+<div class="container mx-auto mt-6 max-w-sm">
+    <h1 class="text-5xl mb-4">Alpine.js Demo</h1>
+
+    <!-- x-data - Declare a new Alpine component and its data for a block of HTML -->
+    <div
+            x-data="{
+        open: false,
+        name: 'Brad',
+        search: '',
+        posts: [
+          {title: 'Post One'},
+          {title: 'Post Two'},
+          {title: 'Post Three'},
+          {title: 'Post Four'},
+        ]
+      }"
+    >
+        <!-- x-on - Listen for browser events on an element -->
+        <!-- You can also use @click -->
+        <!-- x-bind - Dynamically set HTML attributes on an element -->
+        <!-- x-for - Loop over an array of data -->
+        <h3 class="text-2xl mt-6 mb-3 font-bold">Posts</h3>
+        <template x-for="post in posts">
+            <div x-text="post.title"></div>
+        </template>
+        <button
+                @click="posts.push({title: 'New Post'})"
+                class="bg-blue-800 text-white px-4 py-2 rounded-lg mt-4"
+        >
+            Add Post
+        </button>
+    </div>
+    <div x-data="{
         responsedata: null,
         email: null,
         password: null,
@@ -43,11 +75,11 @@
             console.log(this.responsedata);
         },
     }">
-    <input type="text" x-model="email">
-    <input type="text" x-model="password">
-    <a href="index.html" x-on:click="callmethod1">Call method</a>
+        <input type="text" x-model="email">
+        <input type="text" x-model="password">
+        <a href="index.html" x-on:click="callmethod1">Call method</a>
 
-</div>
+    </div>
 </body>
 
 </html>
