@@ -15,7 +15,7 @@
         }
     }">
     <button x-on:click="getData">Send get request</button>
-    Data returned: <strong x-text="users[0].email">Placeholder</strong>
+    Data returned: <strong x-text="users.email">Placeholder</strong>
 
 </div>
 <div x-data="{
@@ -26,9 +26,8 @@
             {
                 method: 'POST',
                 body: JSON.stringify({
-                    title: this.email,
-                    body: 'bar',
-                    userId: 1,
+                    email: this.email,
+                    password: 'qwerty'
                 }),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
@@ -42,7 +41,7 @@
     <button x-on:click="callmethod1">Call method</button>
 
     <p>Data inserted with id: <strong x-text="responsedata.id"></strong></p>
-    <p>Title that was inserted: <strong x-text="responsedata.title"></strong></p>
+    <p>Title that was inserted: <strong x-text="responsedata.email"></strong></p>
 
 </div>
 </body>
