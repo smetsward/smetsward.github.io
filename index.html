@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
     <!-- Main css -->
     <link rel="stylesheet" href="assets/css/main.css">
-
     <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
 
 </head>
@@ -103,21 +102,20 @@
                             </thead>
                             <tbody>
 
-                                <div x-data="{
+                                <tr x-data="{
                                         users: {},
                                         async getData() {
                                             this.users = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')).json();
                                         }
                                     }">
                                     <button x-on:click="getData">Send get request</button>
-                                    Data returned: <strong x-text="users[0].email">Placeholder</strong>
-                                    Data returned: <strong x-text="users[1].email">Placeholder</strong>
-                                    Data returned: <strong x-text="users[2].email">Placeholder</strong>
-                                    Data returned: <strong x-text="users[3].email">Placeholder</strong>
-                                    Data returned: <strong x-text="users[20].email">Placeholder</strong>
-
-
-                                </div>
+                                    <td data-label="Name">Data returned: <strong x-text="users[0].email">Placeholder</strong> </td>
+                                    <td data-label="Ticket Number">Data returned: <strong x-text="users[1].email">Placeholder</strong></td>
+                                    <td data-label="Issue Description">Data returned: <strong x-text="users[2].email">Placeholder</strong></td>
+                                    <td data-label="IP Address">Data returned: <strong x-text="users[3].email">Placeholder</strong></td>
+                                    <td data-label="Providers">Data returned: <strong x-text="users[4].email">Placeholder</strong></td>
+                                    <td data-label="Date & Titme">Data returned: <strong x-text="users[5].email">Placeholder</strong></td>
+                                </tr>
                                 <tr>
                                     <td data-label="Name">Robart Williams</td>
                                     <td data-label="Ticket Number">Robart Williams</td>
