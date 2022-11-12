@@ -84,44 +84,62 @@
                                     <h3 class="title mb-4">Create your account</h3>
 
                                 </div>
-                                <form class="account-form">
+                                <form class="account-form" x-data="{
+                                        responsedata: null,
+                                        email: null,
+                                        async callmethod1() {
+                                            this.responsedata = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/',
+                                            {
+                                                method: 'POST',
+                                                body: JSON.stringify({
+                                                    email: this.email,
+                                                    password: 'qwerty'
+                                                }),
+                                                headers: {
+                                                    'Content-type': 'application/json; charset=UTF-8',
+                                                },
+                                            })).json();
+
+                                            console.log(this.responsedata);
+                                        },
+                                    }">
+
                                     <div class="row gy-4">
                                         <div class="col-xl-6 col-md-6">
                                             <div class="form-group">
-                                                <label for="emal" class="form-label">Email Address *</label>
-                                                <input type="emal" id="emal" class="form-control form--control h-60"
-                                                       placeholder="Email Address">
+                                                <input type="text" x-model="email">
+                                                <button x-on:click="callmethod1">Call method</button>
                                             </div>
                                         </div>
-                                        <div class="col-xl-6 col-md-6">
-                                            <div class="form-group">
-                                                <label for="fullname" class="form-label">Full Name *</label>
-                                                <input type="text" id="fullname" class="form-control form--control h-60"
-                                                       placeholder="Full Name">
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-6 col-md-6">
-                                            <div class="form-group">
-                                                <label for="uname" class="form-label">User Name *</label>
-                                                <input type="text" id="uname" class="form-control form--control h-60"
-                                                       placeholder="Name">
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-6 col-md-6">
-                                            <div class="form-group">
-                                                <label for="pass" class="form-label">Password *</label>
-                                                <input type="password" id="pass" class="form-control form--control h-60"
-                                                       placeholder="Password">
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <button class="cmn--btn w-100 radius-0 h-60">Sign up Account</button>
-                                        </div>
-                                        <div class="col-12">
-                                            <p class="text-center">Already have an account? <a href="sign-in.html"
-                                                                                               class="text--base1">Sign
-                                                In</a></p>
-                                        </div>
+<!--                                        <div class="col-xl-6 col-md-6">-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label for="fullname" class="form-label">Full Name *</label>-->
+<!--                                                <input type="text" id="fullname" class="form-control form&#45;&#45;control h-60"-->
+<!--                                                       placeholder="Full Name">-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-xl-6 col-md-6">-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label for="uname" class="form-label">User Name *</label>-->
+<!--                                                <input type="text" id="uname" class="form-control form&#45;&#45;control h-60"-->
+<!--                                                       placeholder="Name">-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-xl-6 col-md-6">-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label for="pass" class="form-label">Password *</label>-->
+<!--                                                <input type="password" id="pass" class="form-control form&#45;&#45;control h-60"-->
+<!--                                                       placeholder="Password">-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-12">-->
+<!--                                            <button class="cmn&#45;&#45;btn w-100 radius-0 h-60">Sign up Account</button>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-12">-->
+<!--                                            <p class="text-center">Already have an account? <a href="sign-in.html"-->
+<!--                                                                                               class="text&#45;&#45;base1">Sign-->
+<!--                                                In</a></p>-->
+<!--                                        </div>-->
                                     </div>
                                 </form>
                             </div>
