@@ -26,7 +26,7 @@
             {
                 method: 'POST',
                 body: JSON.stringify({
-                    email: this.posttitle,
+                    title: this.posttitle,
                     body: 'bar',
                     userId: 1,
                 }),
@@ -42,7 +42,7 @@
         <button x-on:click="callmethod1">Call method</button>
 
         <p>Data inserted with id: <strong x-text="responsedata.id"></strong></p>
-        <p>Title that was inserted: <strong x-text="responsedata.email"></strong></p>
+        <p>Title that was inserted: <strong x-text="responsedata.title"></strong></p>
 
     </div>
 <!--    <input type="text" x-model="posttitle">-->
