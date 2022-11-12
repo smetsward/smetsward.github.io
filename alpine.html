@@ -19,16 +19,13 @@
 
 </div>
 <div x-data="{
-        users: null,
-        posttitle: null,
+        users: {},
         async callmethod1() {
             this.users = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/',
             {
                 method: 'POST',
                 body: JSON.stringify({
-                    email: this.posttitle,
-                    body: 'bar',
-                    userId: 1
+                    email: 'corsair'
                 }),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8'
@@ -41,8 +38,8 @@
     <input type="text" x-model="posttitle">
     <button x-on:click="callmethod1">Call method</button>
 
-    <p>Data inserted with id: <strong x-text="users.id"></strong></p>
-    <p>Email that was inserted: <strong x-text="users.email"></strong></p>
+    <p>Data inserted with id: <strong x-text="users[0].id"></strong></p>
+    <p>Email that was inserted: <strong x-text="users[0].email"></strong></p>
 
 </div>
 </body>
