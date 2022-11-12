@@ -11,7 +11,7 @@
 <div x-data="{
         users: {},
         async getData() {
-            this.users = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/')).json();
+            this.users = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')).json();
         }
     }">
     <button x-on:click="getData">Send get request</button>
