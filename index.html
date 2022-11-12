@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
     <!-- Main css -->
     <link rel="stylesheet" href="assets/css/main.css">
+
+    <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
+
 </head>
 
 <body class="dark-version">
@@ -100,21 +103,21 @@
                             </thead>
                             <tbody>
 
-<div x-data="{
-        users: {},
-        async getData() {
-            this.users = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')).json();
-        }
-    }">
-    <button x-on:click="getData">Send get request</button>
-    Data returned: <strong x-text="users[0].email">Placeholder</strong>
-    Data returned: <strong x-text="users[1].email">Placeholder</strong>
-    Data returned: <strong x-text="users[2].email">Placeholder</strong>
-    Data returned: <strong x-text="users[3].email">Placeholder</strong>
-    Data returned: <strong x-text="users[20].email">Placeholder</strong>
+                                <div x-data="{
+                                        users: {},
+                                        async getData() {
+                                            this.users = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')).json();
+                                        }
+                                    }">
+                                    <button x-on:click="getData">Send get request</button>
+                                    Data returned: <strong x-text="users[0].email">Placeholder</strong>
+                                    Data returned: <strong x-text="users[1].email">Placeholder</strong>
+                                    Data returned: <strong x-text="users[2].email">Placeholder</strong>
+                                    Data returned: <strong x-text="users[3].email">Placeholder</strong>
+                                    Data returned: <strong x-text="users[20].email">Placeholder</strong>
 
 
-</div>
+                                </div>
                                 <tr>
                                     <td data-label="Name">Robart Williams</td>
                                     <td data-label="Ticket Number">Robart Williams</td>
