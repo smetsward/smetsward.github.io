@@ -53,6 +53,7 @@
             this.responsedata = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/',
             {
                 method: 'POST',
+                user_id: 1,
                 body: JSON.stringify({
                     email: this.email,
                     password: this.password
