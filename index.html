@@ -68,6 +68,29 @@
     <a x-on:click="callmethod1">Summit</a>
 
 </div>
+
+<h2>All tickets</h2>
+
+<div x-data="{
+        items: {},
+        async getData() {
+            this.items = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/items/?skip=0&limit=100')).json();
+        }
+    }">
+    <button x-on:click="getData">Get all items</button>
+    <ul>
+        <li><strong x-text="items[0].title">Placeholder</strong></li>
+        <li><strong x-text="items[0].description">Placeholder</strong></li>
+        <li><strong x-text="items[1].title">Placeholder</strong></li>
+        <li><strong x-text="items[2].title">Placeholder</strong></li>
+        <li><strong x-text="items[3].title">Placeholder</strong></li>
+        <li><strong x-text="items[4].title">Placeholder</strong></li>
+        <li><strong x-text="items[5].title">Placeholder</strong></li>
+        <li><strong x-text="items[6].title">Placeholder</strong></li>
+        <li><strong x-text="items[7].title">Placeholder</strong></li>
+    </ul>
+
+</div>
 </body>
 
 </html>
