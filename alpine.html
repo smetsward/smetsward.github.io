@@ -21,13 +21,14 @@
 <div x-data="{
         responsedata: null,
         email: null,
+        password: null,
         async callmethod1() {
             this.responsedata = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/',
             {
                 method: 'POST',
                 body: JSON.stringify({
                     email: this.email,
-                    password: 'qwerty'
+                    password: this.password
                 }),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
@@ -38,10 +39,8 @@
         },
     }">
     <input type="text" x-model="email">
+    <input type="text" x-model="password">
     <button x-on:click="callmethod1">Call method</button>
-
-    <p>Data inserted with id: <strong x-text="responsedata.id"></strong></p>
-    <p>Title that was inserted: <strong x-text="responsedata.email"></strong></p>
 
 </div>
 </body>
