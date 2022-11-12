@@ -85,32 +85,41 @@
 
                                 </div>
                                 <form class="account-form" x-data="{
-                                        responsedata: null,
-                                        email: null,
-                                        async callmethod1() {
-                                            this.responsedata = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/',
-                                            {
-                                                method: 'POST',
-                                                body: JSON.stringify({
-                                                    email: this.email,
-                                                    password: 'qwerty'
-                                                }),
-                                                headers: {
-                                                    'Content-type': 'application/json; charset=UTF-8',
-                                                },
-                                            })).json();
+                                            responsedata: null,
+                                            email: null,
+                                            async callmethod1() {
+                                                this.responsedata = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/',
+                                                {
+                                                    method: 'POST',
+                                                    body: JSON.stringify({
+                                                        email: this.email,
+                                                        password: 'qwerty'
+                                                    }),
+                                                    headers: {
+                                                        'Content-type': 'application/json; charset=UTF-8',
+                                                    },
+                                                })).json();
 
-                                            console.log(this.responsedata);
-                                        },
-                                    }">
+                                                console.log(this.responsedata);
+                                            },
+                                        }">
+                                        <input type="text" x-model="email">
+                                        <button x-on:click="callmethod1">Call method</button>
 
-                                    <div class="row gy-4">
-                                        <div class="col-xl-6 col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" x-model="email">
-                                                <button x-on:click="callmethod1">Call method</button>
-                                            </div>
-                                        </div>
+                                        <p>Data inserted with id: <strong x-text="responsedata.id"></strong></p>
+                                        <p>Title that was inserted: <strong x-text="responsedata.email"></strong></p>
+
+
+
+
+<!--                                    <div class="row gy-4">-->
+<!--                                        <div class="col-xl-6 col-md-6">-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label for="emal" class="form-label">Email Address *</label>-->
+<!--                                                <input type="emal" id="emal" class="form-control form&#45;&#45;control h-60"-->
+<!--                                                       placeholder="Email Address">-->
+<!--                                            </div>-->
+<!--                                        </div>-->
 <!--                                        <div class="col-xl-6 col-md-6">-->
 <!--                                            <div class="form-group">-->
 <!--                                                <label for="fullname" class="form-label">Full Name *</label>-->
@@ -140,8 +149,8 @@
 <!--                                                                                               class="text&#45;&#45;base1">Sign-->
 <!--                                                In</a></p>-->
 <!--                                        </div>-->
-                                    </div>
-                                </form>
+<!--                                    </div>-->
+                               </form>
                             </div>
                         </div>
                     </div>
