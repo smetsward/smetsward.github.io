@@ -1,68 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="index.js"></script>
+    <title>Alpine</title>
+
+    <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
 
 </head>
-
 <body>
-<!-- Form with name and email in tailwind css and alpine js-->
-<div>
-    <div class="bg-blue-500">
-        <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
-            <div class="pr-16 sm:text-center sm:px-16">
-                <p class="font-medium text-white">
-                        <span class="md:hidden">
-                            Employee Management
-                        </span>
-                    <span class="hidden md:inline">
-                            Big news! We're excited to announce a brand new Employee Management Dashboard.
-                        </span>
-                    <a href="#" class="font-bold underline">
-                        Learn more <span aria-hidden="true">&rarr;</span>
-                    </a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div x-data x-init="$store.usersStore.load()" class="flex justify-center">
-        <div>
-            <!--div top bar in blue color-->
+
+<h2>An Unordered HTML List</h2>
+
+<div x-data="{
+        users: {},
+        async getData() {
+            this.users = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')).json();
+        }
+    }">
+    <button x-on:click="getData">Send get request</button>
+    <ul>
+        <li><strong x-text="users[0].email">Placeholder</strong></li>
+        <li><strong x-text="users[1].email">Placeholder</strong></li>
+        <li><strong x-text="users[2].email">Placeholder</strong></li>
+    </ul>
 
 
-            <form class="w-full justify-center items-center" x-on:submit.prevent="$store.usersStore.addUser()"
-                  class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                <div class="flex justify-center items-center">
-                    <p class="text-3xl items-center"> Add new </p>
-                </div>
+    <strong x-text="users[3].email">Placeholder</strong>
+    <strong x-text="users[4].email">Placeholder</strong>
+    <strong x-text="users[5].email">Placeholder</strong>
+    <strong x-text="users[6].email">Placeholder</strong>
+    <strong x-text="users[7].email">Placeholder</strong>
+    <strong x-text="users[8].email">Placeholder</strong>
+    <strong x-text="users[8].email">Placeholder</strong>
+    <strong x-text="users[9].email">Placeholder</strong>
+    <strong x-text="users[10].email">Placeholder</strong>
+    <strong x-text="users[12].email">Placeholder</strong>
+    <strong x-text="users[13].email">Placeholder</strong>
+    <strong x-text="users[13].email">Placeholder</strong>
+    <strong x-text="users[14].email">Placeholder</strong>
+    <strong x-text="users[15].email">Placeholder</strong>
+    <strong x-text="users[16].email">Placeholder</strong>
+    <strong x-text="users[17].email">Placeholder</strong>
+    <strong x-text="users[18].email">Placeholder</strong>
 
-                <div class="mb-6">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
-                        Email
-                    </label>
-                    <input x-model="$store.usersStore.user.email"
-                           class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                           id="email" type="email" placeholder="Email">
-                    <p class="text-red-500 text-xs italic" x-show="email.length > 0 && !email.includes('@')">Please
-                        enter a valid email address.</p>
-                </div>
-                <div class="flex items-center justify-between">
-                    <button
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                            type="submit">
-                        Sign In
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
+
+</div>
+<div x-data="{
+        responsedata: null,
+        email: null,
+        password: null,
+        async callmethod1() {
+            this.responsedata = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/',
+            {
+                method: 'POST',
+                body: JSON.stringify({
+                    email: this.email,
+                    password: this.password
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })).json();
+
+            console.log(this.responsedata);
+        },
+    }">
+    <input type="text" x-model="email">
+    <input type="text" x-model="password">
+    <a x-on:click="callmethod1">Call method</a>
+
 </div>
 </body>
 
