@@ -1,154 +1,116 @@
-<!-- meta tags and other links -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticketing System</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16">
-    <!-- bootstrap 5  -->
-    <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
-    <!-- Main css -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Document</title>
+    <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./store/index.js"></script>
+
 </head>
 
-<body class="dark-version">
-    <!-- Overlay -->
-    <div class="overlay"></div>
-
-<!-- inner hero section start -->
-<section class="inner-banner bg_img" style="background: url('assets/images/bg/bg2.png');">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-7 col-xl-6 text-center">
-        <h2 class="title text-white">User Dashboard</h2>
-        <ul class="breadcrumb d-flex flex-wrap align-items-center justify-content-center mt-3 mb-0">
-          <li><a href="index.html" class="me-3"><i class="las la-home"></i> Home</a> -</li>
-          <li>Dashboard</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- inner hero section end -->
-
-<!-- Dashboard Starts -->
-<section class="dashboard pt-120 pb-120">
-    <div class="custom-container">
-        <div class="d-flex flex-wrap gap-5 gap-lg-0">
-            <div class="dashboard-sidebar">
-                <button class="btn-close sidebar-close shadow-none d-xl-none position-absolute" style="right: 10px; top: 8px;"></button>
-                <div class="sitebar-header text-center mb-4">
-                    <a href="index.html" class="logo mb-4"><img src="assets/images/logo.png" alt="logo"></a>
-                    <h6 class="name">Suraiya Nesa</h6>
-                    <span class="designation fs--14px">CEO & Founder</span>
-                </div>
-                <ul class="dashboard-menu">
-                    <li><a href="index.html" class="active"><i class="las la-tachometer-alt"></i> Dashboard</a></li>
-                    <li><a href="javascript:void(0)"><i class="las la-chart-bar"></i> Analytics</a></li>
-                    <li><a href="javascript:void(0)"><i class="las la-server"></i> Server</a></li>
-                    <li><a href="javascript:void(0)"><i class="las la-wifi"></i> Network</a></li>
-                    <li><a href="javascript:void(0)"><i class="las la-lock"></i> Security</a></li>
-                    <li><a href="javascript:void(0)"><i class="las la-bell"></i> Notification <span
-                                class="badge badge--sm badge--fill-gradient-one">25</span></a>
-                    </li>
-                    <li><a href="javascript:void(0)"><i class="las la-sms"></i> Messages <span
-                                class="badge badge--sm badge--fill-gradient-one">25</span></a></li>
-                    <li><a href="javascript:void(0)"><i class="las la-tools"></i> Settings</a></li>
-                    <li><a href="javascript:void(0)"><i class="las la-sign-out-alt"></i> Sign Out</a></li>
-                </ul>
-            </div>
-            <div class="dashboard-body">
-                <div class="dashboard-toggler-wrapper px-4 py-2 bg--gradient-one radius-5 text-end mb-4 d-xl-none">
-                    <span class="toggler text-white"><i class="las la-sliders-h"></i></span>
-                </div>
-                <div class="dashboard-inner bg--light">
-                    <div class="dashboard-body__header d-flex flex-wrap justify-content-between gap-4 mb-4 mb-sm-5">
-                        <div class="left">
-                            <span class="fs--14px">Good Morning !</span>
-                            <h5 class="title">Dashboard Summary</h5>
-                        </div>
-                        <div class="right d-flex flex-wrap align-items-center gap-3 gap-sm-4">
-                            <form class="search-bar">
-                                <div class="form-group">
-                                    <button class="btn py-2 px-3"><i class="fas fa-search text--body"></i></button>
-                                    <input type="text" class="form-control form--control" placeholder="type in to search">
-                                </div>
-                            </form>
-                            <div class="notification">
-                                <a href="javascript:void(0)" class="notification-icon"><i class="las la-bell"></i> <span
-                                        class="badge badge--sm badge--fill-gradient-one">5</span></a>
-
-                            </div>
-                            <div class="profile-menu">
-                                <div class="thumb"><img src="assets/images/thumb/thumb19.png" alt="thumb"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-sm-4 bg-white radius-5">
-                        <table class="table custom--table table--responsive--lg">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Ticket Number</th>
-                                    <th>Issue Description</th>
-                                    <th>IP Address</th>
-                                    <th>Providers</th>
-                                    <th>Date & Titme</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td data-label="Name">Robart Williams</td>
-                                    <td data-label="Ticket Number">Robart Williams</td>
-                                    <td data-label="Issue Description">Can not Accoss Server</td>
-                                    <td data-label="IP Address">187.124.875.22</td>
-                                    <td data-label="Providers">Businesscon</td>
-                                    <td data-label="Date & Titme">25 / May / 2021 16:00</td>
-                                </tr>
-                                <tr>
-                                    <td data-label="Name">Robart Williams</td>
-                                    <td data-label="Ticket Number">Robart Williams</td>
-                                    <td data-label="Issue Description">Can not Accoss Server</td>
-                                    <td data-label="IP Address">187.124.875.22</td>
-                                    <td data-label="Providers">Businesscon</td>
-                                    <td data-label="Date & Titme">25 / May / 2021 16:00</td>
-                                </tr>
-                                <tr>
-                                    <td data-label="Name">Robart Williams</td>
-                                    <td data-label="Ticket Number">Robart Williams</td>
-                                    <td data-label="Issue Description">Can not Accoss Server</td>
-                                    <td data-label="IP Address">187.124.875.22</td>
-                                    <td data-label="Providers">Businesscon</td>
-                                    <td data-label="Date & Titme">25 / May / 2021 16:00</td>
-                                </tr>
-                                <tr>
-                                    <td data-label="Name">Robart Williams</td>
-                                    <td data-label="Ticket Number">Robart Williams</td>
-                                    <td data-label="Issue Description">Can not Accoss Server</td>
-                                    <td data-label="IP Address">187.124.875.22</td>
-                                    <td data-label="Providers">Businesscon</td>
-                                    <td data-label="Date & Titme">25 / May / 2021 16:00</td>
-                                </tr>
-                                <tr>
-                                    <td data-label="Name">Robart Williams</td>
-                                    <td data-label="Ticket Number">Robart Williams</td>
-                                    <td data-label="Issue Description">Can not Accoss Server</td>
-                                    <td data-label="IP Address">187.124.875.22</td>
-                                    <td data-label="Providers">Businesscon</td>
-                                    <td data-label="Date & Titme">25 / May / 2021 16:00</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+<body>
+<!-- Form with name and email in tailwind css and alpine js-->
+<div>
+    <div class="bg-blue-500">
+        <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+            <div class="pr-16 sm:text-center sm:px-16">
+                <p class="font-medium text-white">
+                        <span class="md:hidden">
+                            Employee Management
+                        </span>
+                    <span class="hidden md:inline">
+                            Big news! We're excited to announce a brand new Employee Management Dashboard.
+                        </span>
+                    <a href="#" class="font-bold underline">
+                        Learn more <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </p>
             </div>
         </div>
     </div>
-</section>
-<!-- Dashboard Ends -->
+    <div x-data x-init="$store.usersStore.load()" class="flex justify-center">
+        <div>
+            <!--div top bar in blue color-->
 
+
+            <form class="w-full justify-center items-center" x-on:submit.prevent="$store.usersStore.addUser()"
+                  class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <div class="flex justify-center items-center">
+                    <p class="text-3xl items-center"> Add new </p>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                        Name
+                    </label>
+                    <input x-model="$store.usersStore.user.name"
+                           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                           id="name" type="text" placeholder="Name">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                        Email
+                    </label>
+                    <input x-model="$store.usersStore.user.email"
+                           class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                           id="email" type="email" placeholder="Email">
+                    <p class="text-red-500 text-xs italic" x-show="email.length > 0 && !email.includes('@')">Please
+                        enter a valid email address.</p>
+                </div>
+                <div class="flex items-center justify-between">
+                    <button
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            type="submit">
+                        Sign In
+                    </button>
+                </div>
+            </form>
+            <div class="flex justify-center items-center">
+                <p class="text-3xl items-center"> List of users </p>
+            </div>
+            <!-- table in tailwindcss with name email edit and delete in alpine js-->
+            <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/1">
+                <table class="table-auto w-full">
+                    <thead>
+                    <tr>
+                        <th class="px-4 py-2">Name</th>
+                        <th class="px-4 py-2">Email</th>
+                        <th class="px-4 py-2">Edit</th>
+                        <th class="px-4 py-2">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <template x-for="user in $store.usersStore.users" :key="user.id">
+                        <tr>
+                            <td class="border px-4 py-2" x-text="user.name"></td>
+                            <td class="border px-4 py-2" x-text="user.email"></td>
+                            <td class="border px-4 py-2">
+                                <button
+                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                        type="button" x-on:click="$store.usersStore.updateUser(user)">
+                                    Edit
+                                </button>
+                            </td>
+                            <td class="border px-4 py-2">
+                                <button
+                                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                        type="button" x-on:click="$store.usersStore.deleteUser(user.id)">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </template>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>

@@ -14,7 +14,7 @@
             this.users = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')).json();
         }
     }">
-    <div x-show="getData">Send get request</div>
+    <button x-show="getData">Send get request</button>
     Data returned: <strong x-text="users[0].email">Placeholder</strong>
     Data returned: <strong x-text="users[1].email">Placeholder</strong>
     Data returned: <strong x-text="users[2].email">Placeholder</strong>
@@ -76,7 +76,7 @@
     }">
         <input type="text" x-model="email">
         <input type="text" x-model="password">
-        <a href="index.html" x-on:click="callmethod1">Call method</a>
+        <a href="dach.html" x-on:click="callmethod1">Call method</a>
 
     </div>
 </body>
