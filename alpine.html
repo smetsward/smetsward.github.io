@@ -14,12 +14,13 @@
             this.users = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')).json();
         }
     }">
-    <div x-show="getData">
-        Data returned: <strong x-text="users[0].email">Placeholder</strong>
-        Data returned: <strong x-text="users[1].email">Placeholder</strong>
-        Data returned: <strong x-text="users[2].email">Placeholder</strong>
-        Data returned: <strong x-text="users[3].email">Placeholder</strong>
-        Data returned: <strong x-text="users[20].email">Placeholder</strong>
+    <div x-show="getData">Send get request</div>
+    Data returned: <strong x-text="users[0].email">Placeholder</strong>
+    Data returned: <strong x-text="users[1].email">Placeholder</strong>
+    Data returned: <strong x-text="users[2].email">Placeholder</strong>
+    Data returned: <strong x-text="users[3].email">Placeholder</strong>
+    Data returned: <strong x-text="users[20].email">Placeholder</strong>
+
 
 </div>
 <div class="container mx-auto mt-6 max-w-sm">
