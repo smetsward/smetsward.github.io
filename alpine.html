@@ -8,18 +8,37 @@
 
 </head>
 <body>
-<!--<div x-data="{
+<div x-data="{
         users: {},
         async getData() {
             this.users = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')).json();
         }
     }">
     <button x-on:click="getData">Send get request</button>
-    Data returned: <strong x-text="users[0].email">Placeholder</strong>
+    <strong x-text="users[0].email">Placeholder</strong>
+    <strong x-text="users[1].email">Placeholder</strong>
+    <strong x-text="users[2].email">Placeholder</strong>
+    <strong x-text="users[3].email">Placeholder</strong>
+    <strong x-text="users[4].email">Placeholder</strong>
+    <strong x-text="users[5].email">Placeholder</strong>
+    <strong x-text="users[6].email">Placeholder</strong>
+    <strong x-text="users[7].email">Placeholder</strong>
+    <strong x-text="users[8].email">Placeholder</strong>
+    <strong x-text="users[8].email">Placeholder</strong>
+    <strong x-text="users[9].email">Placeholder</strong>
+    <strong x-text="users[10].email">Placeholder</strong>
+    <strong x-text="users[12].email">Placeholder</strong>
+    <strong x-text="users[13].email">Placeholder</strong>
+    <strong x-text="users[13].email">Placeholder</strong>
+    <strong x-text="users[14].email">Placeholder</strong>
+    <strong x-text="users[15].email">Placeholder</strong>
+    <strong x-text="users[16].email">Placeholder</strong>
+    <strong x-text="users[17].email">Placeholder</strong>
+    <strong x-text="users[18].email">Placeholder</strong>
 
 
-</div>-->
-    <div x-data="{
+</div>
+<div x-data="{
         responsedata: null,
         email: null,
         password: null,
@@ -39,38 +58,11 @@
             console.log(this.responsedata);
         },
     }">
-        <input type="text" x-model="email">
-        <input type="text" x-model="password">
-        <a x-on:click="callmethod1">Call method</a>
+    <input type="text" x-model="email">
+    <input type="text" x-model="password">
+    <a x-on:click="callmethod1">Call method</a>
 
-    </div>
-
-    <div x-data="{
-        responsedata: null,
-        email: null,
-        password: null,
-        async callmethod2() {
-            this.responsedata = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/',
-            {
-                method: 'POST',
-                user_id: 1,
-                body: JSON.stringify({
-                    email: this.email,
-                    password: this.password
-                }),
-                headers: {
-                    'Content-type': 'application/json; charset=UTF-8',
-                },
-            })).json();
-
-            console.log(this.responsedata);
-        },
-    }">
-        <input type="text" x-model="email">
-        <input type="text" x-model="password">
-        <a x-on:click="callmethod2">Call method</a>
-
-    </div>
+</div>
 </body>
 
 </html>
