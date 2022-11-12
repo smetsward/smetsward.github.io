@@ -3,7 +3,6 @@ document.addEventListener('alpine:init', async () => {
         {
             users: [],
             user: {
-                id: () => Math.random().toString(36).substr(2, 9),
                 email: '',
             },
             async addUser() {

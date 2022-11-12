@@ -14,7 +14,7 @@
             this.users = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')).json();
         }
     }">
-    <button x-show="getData">Send get request</button>
+    <button x-on:click="getData">Send get request</button>
     Data returned: <strong x-text="users[0].email">Placeholder</strong>
 
 
