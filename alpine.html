@@ -8,6 +8,9 @@
 
 </head>
 <body>
+
+<h2>An Unordered HTML List</h2>
+
 <div x-data="{
         users: {},
         async getData() {
@@ -15,9 +18,13 @@
         }
     }">
     <button x-on:click="getData">Send get request</button>
-    <strong x-text="users[0].email">Placeholder</strong>
-    <strong x-text="users[1].email">Placeholder</strong>
-    <strong x-text="users[2].email">Placeholder</strong>
+    <ul>
+        <li><strong x-text="users[0].email">Placeholder</strong></li>
+        <li><strong x-text="users[1].email">Placeholder</strong></li>
+        <li><strong x-text="users[2].email">Placeholder</strong></li>
+    </ul>
+
+
     <strong x-text="users[3].email">Placeholder</strong>
     <strong x-text="users[4].email">Placeholder</strong>
     <strong x-text="users[5].email">Placeholder</strong>
