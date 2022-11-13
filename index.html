@@ -19,24 +19,24 @@
     }">
     <button x-on:click="getData">Get all users</button>
     <ul>
-        <li><strong x-text="users[0].email">Placeholder</strong></li>
-        <li><strong x-text="users[1].email">Placeholder</strong></li>
-        <li><strong x-text="users[2].email">Placeholder</strong></li>
-        <li><strong x-text="users[3].email">Placeholder</strong></li>
-        <li><strong x-text="users[4].email">Placeholder</strong></li>
-        <li><strong x-text="users[5].email">Placeholder</strong></li>
-        <li><strong x-text="users[6].email">Placeholder</strong></li>
-        <li><strong x-text="users[7].email">Placeholder</strong></li>
-        <li><strong x-text="users[8].email">Placeholder</strong></li>
-        <li><strong x-text="users[9].email">Placeholder</strong></li>
-        <li><strong x-text="users[10].email">Placeholder</strong></li>
-        <li><strong x-text="users[12].email">Placeholder</strong></li>
-        <li><strong x-text="users[13].email">Placeholder</strong></li>
-        <li><strong x-text="users[14].email">Placeholder</strong></li>
-        <li><strong x-text="users[15].email">Placeholder</strong></li>
-        <li><strong x-text="users[16].email">Placeholder</strong></li>
-        <li><strong x-text="users[17].email">Placeholder</strong></li>
-        <li><strong x-text="users[18].email">Placeholder</strong></li>
+        <li><strong x-text="users[0].name">Placeholder</strong></li>
+        <li><strong x-text="users[1].name">Placeholder</strong></li>
+        <li><strong x-text="users[2].name">Placeholder</strong></li>
+        <li><strong x-text="users[3].name">Placeholder</strong></li>
+        <li><strong x-text="users[4].name">Placeholder</strong></li>
+        <li><strong x-text="users[5].name">Placeholder</strong></li>
+        <li><strong x-text="users[6].name">Placeholder</strong></li>
+        <li><strong x-text="users[7].name">Placeholder</strong></li>
+        <li><strong x-text="users[8].name">Placeholder</strong></li>
+        <li><strong x-text="users[9].name">Placeholder</strong></li>
+        <li><strong x-text="users[10].name">Placeholder</strong></li>
+        <li><strong x-text="users[12].name">Placeholder</strong></li>
+        <li><strong x-text="users[13].name">Placeholder</strong></li>
+        <li><strong x-text="users[14].name">Placeholder</strong></li>
+        <li><strong x-text="users[15].name">Placeholder</strong></li>
+        <li><strong x-text="users[16].name">Placeholder</strong></li>
+        <li><strong x-text="users[17].name">Placeholder</strong></li>
+        <li><strong x-text="users[18].name">Placeholder</strong></li>
     </ul>
 
 </div>
@@ -45,15 +45,15 @@
 
 <div x-data="{
         responsedata: null,
-        email: null,
-        password: null,
+        name: null,
+        surename: null,
         async callmethod1() {
             this.responsedata = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/',
             {
                 method: 'POST',
                 body: JSON.stringify({
-                    email: this.email,
-                    password: this.password
+                    name: this.name,
+                    surename: this.surename
                 }),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
@@ -63,8 +63,8 @@
             console.log(this.responsedata);
         },
     }">
-    <input type="text" x-model="email">
-    <input type="text" x-model="password">
+    <input type="text" x-model="name">
+    <input type="text" x-model="surename">
     <a x-on:click="callmethod1">Summit</a>
 
 </div>
@@ -81,7 +81,6 @@
     <ul>
         <li>Subject: <strong x-text="items[0].title">Placeholder</strong>
             Description: <strong x-text="items[0].description">Placeholder</strong></li>
-        <li><strong x-text="items[0].description">Placeholder</strong></li>
         <li><strong x-text="items[1].title">Placeholder</strong></li>
         <li><strong x-text="items[2].title">Placeholder</strong></li>
         <li><strong x-text="items[3].title">Placeholder</strong></li>
