@@ -91,6 +91,36 @@
     </ul>
 
 </div>
+
+
+<div x-data="{
+        responsedata: null,
+        title: null,
+        description: null,
+        user_id: null,
+        async callmethod2() {
+            this.responsedata = await (await fetch('https://useritem-api-service-smetsward.cloud.okteto.net/users/'+ this.user_id + '/items/',
+            {
+                method: 'POST',
+                body: JSON.stringify({
+                    title: this.title,
+                    description: this.description
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })).json();
+
+            console.log(this.responsedata);
+        },
+    }">
+    <input type="text" x-model="title">
+    <input type="text" x-model="description">
+    <input type="text" x-model="user_id">
+
+    <button x-on:click="callmethod2">Summit</button>
+
+</div>
 </body>
 
 </html>
