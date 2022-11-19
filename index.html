@@ -36,35 +36,67 @@
 
 
     <button x-on:click="getData">Get all users</button>
+    <table class="col-6">
+        <tr>
+            <th>Name</th>
+            <th>Ticket</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td x-text="users[0].name">Placeholder</td>
+            <td x-text="users[0].tickets[0].title">Placeholder</td>
+            <td x-text="users[0].tickets[0].description">Placeholder</td>
+        </tr>
+    </table>
+
+    <table class="col-lg-4">
+        <tr>
+            <th>Name</th>
+            <th>Ticket</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td x-text="users[0].name">Placeholder</td>
+            <td x-text="users[0].tickets[0].title">Placeholder</td>
+            <td x-text="users[0].tickets[0].description">Placeholder</td>
+        </tr>
+    </table>
     <div class="container">
         <div class="row">
-            <table class="col-6">
+            <table class="col">
                 <tr>
-                    <th>Name</th>
-                    <th>Ticket</th>
-                    <th>Description</th>
+                    <th>Company</th>
+                    <th>Contact</th>
+                    <th>Country</th>
                 </tr>
                 <tr>
-                    <td x-text="users[0].name">Placeholder</td>
-                    <td x-text="users[0].tickets[0].title">Placeholder</td>
-                    <td x-text="users[0].tickets[0].description">Placeholder</td>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Maria Anders</td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>Centro comercial Moctezuma</td>
+                    <td>Francisco Chang</td>
+                    <td>Mexico</td>
                 </tr>
             </table>
-            <div class="row">
-
-                <table class="col-lg-4">
-                    <tr>
-                        <th>Name</th>
-                        <th>Ticket</th>
-                        <th>Description</th>
-                    </tr>
-                    <tr>
-                        <td x-text="users[0].name">Placeholder</td>
-                        <td x-text="users[0].tickets[0].title">Placeholder</td>
-                        <td x-text="users[0].tickets[0].description">Placeholder</td>
-                    </tr>
-                </table>
-            </div>
+            <table class="col">
+                <tr>
+                    <th>Company</th>
+                    <th>Contact</th>
+                    <th>Country</th>
+                </tr>
+                <tr>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Maria Anders</td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>Centro comercial Moctezuma</td>
+                    <td>Francisco Chang</td>
+                    <td>Mexico</td>
+                </tr>
+            </table>
         </div>
     </div>
 
