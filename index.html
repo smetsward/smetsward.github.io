@@ -7,80 +7,8 @@
     <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"></script>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+    <link rel="stylesheet" href="css/main.css">
 
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-
-        section {
-            padding: 60px 0;
-            overflow: hidden;
-        }
-
-        .section-bg {
-            background-color: #f9f9fa;
-        }
-
-        .section-title {
-            text-align: center;
-            padding: 30px 0;
-            position: relative;
-        }
-
-        .section-title h2 {
-            font-size: 32px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            padding-bottom: 0;
-            color: #5f687b;
-            position: relative;
-            z-index: 2;
-        }
-
-        .section-title span {
-            position: absolute;
-            top: 30px;
-            color: #f0f1f3;
-            left: 0;
-            right: 0;
-            z-index: 1;
-            font-weight: 700;
-            font-size: 52px;
-            text-transform: uppercase;
-            line-height: 0;
-        }
-
-        .section-title p {
-            margin-bottom: 0;
-            position: relative;
-            z-index: 2;
-        }
-
-        @media (max-width: 575px) {
-            .section-title h2 {
-                font-size: 28px;
-                margin-bottom: 15px;
-            }
-
-            .section-title span {
-                font-size: 38px;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -105,56 +33,62 @@
                 <div class="col-lg-12">
                     <div class="icon-box">
                         <table>
+
                             <tr>
                                 <th>Name</th>
                                 <th>Ticket</th>
                                 <th>Description</th>
                             </tr>
-                            <tr>
-                                <td x-text="users[0].name">Placeholder</td>
-                                <td x-text="users[0].tickets[0].title">Placeholder</td>
-                                <td x-text="users[0].tickets[0].description">Placeholder</td>
-                            </tr>
-                            <tr>
-                                <td x-text="users[1].name">Placeholder</td>
-                                <td x-text="users[1].tickets[0].title">Placeholder</td>
-                                <td x-text="users[1].tickets[0].description">Placeholder</td>
-                            </tr>
-                            <tr>
-                                <td x-text="users[2].name">Placeholder</td>
-                                <td x-text="users[2].tickets[0].title">Placeholder</td>
-                                <td x-text="users[2].tickets[0].description">Placeholder</td>
-                            </tr>
-                            <tr>
-                                <td x-text="users[3].name">Placeholder</td>
-                                <td x-text="users[3].tickets[0].title">Placeholder</td>
-                                <td x-text="users[3].tickets[0].description">Placeholder</td>
-                            </tr>
-                            <tr>
-                                <td x-text="users[4].name">Placeholder</td>
-                                <td x-text="users[4].tickets[0].title">Placeholder</td>
-                                <td x-text="users[4].tickets[0].description">Placeholder</td>
-                            </tr>
-                            <tr>
-                                <td x-text="users[5].name">Placeholder</td>
-                                <td x-text="users[5].tickets[0].title">Placeholder</td>
-                                <td x-text="users[5].tickets[0].description">Placeholder</td>
-                            </tr>
-                            <tr>
-                                <td x-text="users[6].name">Placeholder</td>
-                                <td x-text="users[6].tickets[0].title">Placeholder</td>
-                                <td x-text="users[6].tickets[0].description">Placeholder</td>
-                            </tr>
-                            <tr>
-                                <td x-text="users[7].name">Placeholder</td>
-                                <td x-text="users[7].tickets[0].title">Placeholder</td>
-                                <td x-text="users[7].tickets[0].description">Placeholder</td>
-                            </tr>
-                            <tr>
-                                <td x-text="users[8].name">Placeholder</td>
-                                <td x-text="users[8].tickets[0].title">Placeholder</td>
-                                <td x-text="users[8].tickets[0].description">Placeholder</td>
-                            </tr>
+                            <template x-for="gg in users">
+                                <td x-text="gg[1].name">Placeholder</td>
+                                <td x-text="gg[1].tickets[0].title">Placeholder</td>
+                                <td x-text="gg[1].tickets[0].description">Placeholder</td>
+                            </template>
+                            <!--                            <tr>
+                                                            <td x-text="users[0].name">Placeholder</td>
+                                                            <td x-text="users[0].tickets[0].title">Placeholder</td>
+                                                            <td x-text="users[0].tickets[0].description">Placeholder</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td x-text="users[1].name">Placeholder</td>
+                                                            <td x-text="users[1].tickets[0].title">Placeholder</td>
+                                                            <td x-text="users[1].tickets[0].description">Placeholder</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td x-text="users[2].name">Placeholder</td>
+                                                            <td x-text="users[2].tickets[0].title">Placeholder</td>
+                                                            <td x-text="users[2].tickets[0].description">Placeholder</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td x-text="users[3].name">Placeholder</td>
+                                                            <td x-text="users[3].tickets[0].title">Placeholder</td>
+                                                            <td x-text="users[3].tickets[0].description">Placeholder</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td x-text="users[4].name">Placeholder</td>
+                                                            <td x-text="users[4].tickets[0].title">Placeholder</td>
+                                                            <td x-text="users[4].tickets[0].description">Placeholder</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td x-text="users[5].name">Placeholder</td>
+                                                            <td x-text="users[5].tickets[0].title">Placeholder</td>
+                                                            <td x-text="users[5].tickets[0].description">Placeholder</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td x-text="users[6].name">Placeholder</td>
+                                                            <td x-text="users[6].tickets[0].title">Placeholder</td>
+                                                            <td x-text="users[6].tickets[0].description">Placeholder</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td x-text="users[7].name">Placeholder</td>
+                                                            <td x-text="users[7].tickets[0].title">Placeholder</td>
+                                                            <td x-text="users[7].tickets[0].description">Placeholder</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td x-text="users[8].name">Placeholder</td>
+                                                            <td x-text="users[8].tickets[0].title">Placeholder</td>
+                                                            <td x-text="users[8].tickets[0].description">Placeholder</td>
+                                                        </tr>-->
                         </table>
                     </div>
                 </div>
@@ -174,6 +108,77 @@
                         </table>
                     </div>
                 </div>-->
+            </div>
+        </div>
+    </div>
+</section>
+<section class=" section-bg">
+    <div class="container">
+
+        <div class="section-title">
+            <span>Create a users</span>
+            <h2>Create a users</h2>
+        </div>
+
+        <div x-data="{
+        responsedata: null,
+        name: null,
+        surname: null,
+        async callmethod1() {
+            this.responsedata = await (await fetch('https://userticket-api-service-smetsward.cloud.okteto.net/users/',
+            {
+                method: 'POST',
+                body: JSON.stringify({
+                    name: this.name,
+                    surname: this.surname
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })).json();
+
+            console.log(this.responsedata);
+        },
+    }">
+            <input type="text" x-model="name">
+            <input type="text" x-model="surname">
+            <button x-on:click="callmethod1">Summit</button>
+
+            <div class="row">
+                <button x-on:click="getData">Get all users</button>
+
+                <div class="col-lg-12">
+                    <div class="icon-box">
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Ticket</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td x-text="users[0].name">Placeholder</td>
+                                <td x-text="users[0].tickets[0].title">Placeholder</td>
+                                <td x-text="users[0].tickets[0].description">Placeholder</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4 mt-md-0">
+                    <div class="icon-box">
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Ticket</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td x-text="users[0].name">Placeholder</td>
+                                <td x-text="users[0].tickets[0].title">Placeholder</td>
+                                <td x-text="users[0].tickets[0].description">Placeholder</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
