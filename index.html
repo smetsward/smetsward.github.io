@@ -75,9 +75,9 @@
             this.users = await (await fetch('https://userticket-api-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')).json();
         }
     }">
-            <div class="row">
-                <button x-on:click="getData">Get all users</button>
 
+            <button class="text-center" x-on:click="getData">Get all users</button>
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="icon-box">
                         <table>
@@ -228,9 +228,8 @@
         }
     }">
 
+            <button class="text-center" x-on:click="getData">Get all Tickets</button>
             <div class="row">
-                <button x-on:click="getData">Get all Tickets</button>
-
                 <div class="col-lg-12">
                     <div class="icon-box">
                         <table>
