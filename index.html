@@ -265,14 +265,20 @@
     </ul>
 
 </div>
+<section>
+    <div class="container">
 
-<div x-data="{
+        <div class="section-title">
+            <span>Create ticket</span>
+            <h2>Create ticket</h2>
+        </div>
+        <div x-data="{
         responsedata: null,
         title: null,
         description: null,
         user_id: null,
         async callmethod2() {
-            this.responsedata = await (await fetch('https://userticket-api-service-smetsward.cloud.okteto.net/users/'+ this.user_id + '/items/',
+            this.responsedata = await (await fetch('https://userticket-api-service-smetsward.cloud.okteto.net/users/'+ this.user_id + '/tickets/',
             {
                 method: 'POST',
                 body: JSON.stringify({
@@ -287,43 +293,39 @@
             console.log(this.responsedata);
         },
     }">
-    <input type="text" x-model="title">
-    <input type="text" x-model="description">
-    <input type="text" x-model="user_id">
+            <input type="text" x-model="title">
+            <input type="text" x-model="description">
+            <input type="text" x-model="user_id">
 
-    <button x-on:click="callmethod2">Summit</button>
+            <button x-on:click="callmethod2">Summit</button>
 
-    <section>
-      <div class="container">
 
-        <div class="section-title">
-          <span>Create ticket</span>
-          <h2>Create ticket</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">User id</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="name">User id</label>
+                            <input type="text" x-model="user_id">
+                        </div>
+                        <div class="form-group col-md-6 mt-3 mt-md-0">
+                            <label for="name">Subject</label>
+                            <input type="text" x-model="title">
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="name">Message</label>
+                        <input type="text" x-model="description">
+                    </div>
+                    <div class="text-center">
+                        <button x-on:click="callmethod2">Summit</button>
+                    </div>
                 </div>
-                <div class="form-group col-md-6 mt-3 mt-md-0">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-          </div>
+
+            </div>
 
         </div>
-
-      </div>
-    </section>
+    </div>
+</section>
 
 </div>
 </body>
