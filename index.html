@@ -84,12 +84,14 @@
                         <table>
                             <tr>
                                 <th>Name</th>
+                                <th>User ID</th>
                                 <th>Ticket</th>
                                 <th>Description</th>
                             </tr>
                             <template x-for="usr in users" :key="usr.id">
                                 <tr>
                                     <td x-text="usr.name">Placeholder</td>
+                                    <td x-text="usr.id">Placeholder</td>
                                     <td x-text="usr.tickets[0].title">Placeholder</td>
                                     <td x-text="usr.tickets[0].description">Placeholder</td>
                                 </tr>
