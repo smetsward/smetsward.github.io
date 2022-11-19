@@ -61,7 +61,7 @@ section {
     z-index: 2;
 }
 
-.button {
+button {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
@@ -76,7 +76,7 @@ section {
   color: #fff;
 }
 
-.button .button-btn:hover {
+button:hover {
   background: #5f687b;
   border-color: #5f687b;
 }
