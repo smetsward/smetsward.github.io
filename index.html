@@ -75,8 +75,10 @@
             this.users = await (await fetch('https://userticket-api-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')).json();
         }
     }">
+            <div class="text-center">
+                <button x-on:click="getData">Get all users</button>
+            </div>
 
-            <button class="text-center" x-on:click="getData">Get all users</button>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="icon-box">
@@ -184,11 +186,6 @@
             console.log(this.responsedata);
         },
     }">
-            <!--            <input type="text" x-model="title">-->
-            <!--            <input type="text" x-model="description">-->
-            <!--            <input type="text" x-model="user_id">-->
-            <!--            <button x-on:click="callmethod2">Summit</button>-->
-
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
@@ -205,9 +202,7 @@
                         <label for="userid">Message</label>
                         <textarea class="form-control" name="message" rows="10" x-model="description"></textarea>
                     </div>
-                    <div class="text-center">
-                        <button x-on:click="callmethod2">Summit</button>
-                    </div>
+                    <button x-on:click="callmethod2">Summit</button>
                 </div>
             </div>
         </div>
@@ -228,7 +223,9 @@
         }
     }">
 
-            <button class="text-center" x-on:click="getData">Get all Tickets</button>
+            <div class="text-center">
+                <button x-on:click="getData">Get all Tickets</button>
+            </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="icon-box">
