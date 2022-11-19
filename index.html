@@ -261,10 +261,14 @@
             <span>Tickets</span>
             <h2>Tickets</h2>
         </div>
-        <div x-data="alpineInstance()" x-init="getTickets()">
+        <div class="h-full bg-gray-200 text-gray-800 p-4 lg:p-8"
+             x-data="alpineInstance()"
+             x-init="fetch('https://userticket-api-service-smetsward.cloud.okteto.net/tickets/?skip=0&limit=100')
+                      .then(response => response.json())
+                      .then(data => tickets = data)">
 
             <div class="text-center">
-                <button>Get all Tickets</button>
+                <button onclick="reload()">Get all Tickets</button>
             </div>
             <div class="row">
                 <div class="col-lg-12">
