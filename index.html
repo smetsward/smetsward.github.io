@@ -90,8 +90,8 @@
                             <template x-for="usr in users" :key="usr.id">
                                 <tr>
                                     <td x-text="usr.name">Placeholder</td>
-                                    <td x-text="usr.tickets.title">Placeholder</td>
-                                    <td x-text="usr.tickets.description">Placeholder</td>
+                                    <td x-text="usr.tickets[0].title">Placeholder</td>
+                                    <td x-text="usr.tickets[0].description">Placeholder</td>
                                 </tr>
                             </template>
                         </table>
