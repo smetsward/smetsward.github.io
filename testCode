@@ -53,3 +53,58 @@
     </ul>
 
 </div>
+
+
+
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <span>Create ticket</span>
+            <h2>Create ticket</h2>
+        </div>
+
+        <div x-data="{
+        responsedata: null,
+        name: null,
+        surname: null,
+        async callmethod1() {
+            this.responsedata = await (await fetch('https://userticket-api-service-smetsward.cloud.okteto.net/users/',
+            {
+                method: 'POST',
+                body: JSON.stringify({
+                    name: this.name,
+                    surname: this.surname
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })).json();
+
+            console.log(this.responsedata);
+        },
+    }">
+            <input type="text" x-model="name">
+            <input type="text" x-model="surname">
+            <button x-on:click="callmethod1">Summit</button>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" class="form-control" id="name" x-model="name">
+                        </div>
+                        <div class="form-group col-md-6 mt-3 mt-md-0">
+                            <label for="name">Surname</label>
+                            <input type="text" class="form-control" name="surname" id="surname" x-model="surname">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button x-on:click="callmethod1">Summit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
