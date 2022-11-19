@@ -261,14 +261,10 @@
             <span>Tickets</span>
             <h2>Tickets</h2>
         </div>
-        <div class="h-full bg-gray-200 text-gray-800 p-4 lg:p-8"
-             x-data="alpineInstance()"
-             x-init="fetch('https://userticket-api-service-smetsward.cloud.okteto.net/tickets/?skip=0&limit=100')
-                      .then(response => response.json())
-                      .then(data => tickets = data)">
+        <div x-data="alpineInstance()" x-init="getTickets()">
 
             <div class="text-center">
-                <button x-on:click="{open = true}">Get all Tickets</button>
+                <button>Get all Tickets</button>
             </div>
             <div class="row">
                 <div class="col-lg-12">
@@ -278,7 +274,7 @@
                                 <th>Subject</th>
                                 <th>Description</th>
                             </tr>
-                            <template x-data="{open: false}" x-for="tiks in tickets" :key="tiks.id">
+                            <template x-for="tiks in tickets" :key="tiks.id">
                                 <tr x-show="open">
                                     <td x-text="tiks.title">Placeholder</td>
                                     <td x-text="tiks.description">Placeholder</td>
