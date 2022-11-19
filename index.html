@@ -27,8 +27,7 @@
 <body>
 
 <h2>All users</h2>
-<div class="container">
-    <div x-data="{
+<div x-data="{
         users: {},
         async getData() {
             this.users = await (await fetch('https://userticket-api-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')).json();
@@ -36,34 +35,56 @@
     }">
 
 
-        <button x-on:click="getData">Get all users</button>
-        <div class="row">
-            <table class="col-6">
-                <tr>
-                    <th>Name</th>
-                    <th>Ticket</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td x-text="users[0].name">Placeholder</td>
-                    <td x-text="users[0].tickets[0].title">Placeholder</td>
-                    <td x-text="users[0].tickets[0].description">Placeholder</td>
-                </tr>
-            </table>
-            <table class="col-6">
-                <tr>
-                    <th>Name</th>
-                    <th>Ticket</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td x-text="users[0].name">Placeholder</td>
-                    <td x-text="users[0].tickets[0].title">Placeholder</td>
-                    <td x-text="users[0].tickets[0].description">Placeholder</td>
-                </tr>
-            </table>
-        </div>
-    </div>
+    <button x-on:click="getData">Get all users</button>
+    <table class="col-6">
+        <tr>
+            <th>Name</th>
+            <th>Ticket</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td x-text="users[0].name">Placeholder</td>
+            <td x-text="users[0].tickets[0].title">Placeholder</td>
+            <td x-text="users[0].tickets[0].description">Placeholder</td>
+        </tr>
+    </table>
+    <table class="col-6">
+        <tr>
+            <th>Name</th>
+            <th>Ticket</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td x-text="users[0].name">Placeholder</td>
+            <td x-text="users[0].tickets[0].title">Placeholder</td>
+            <td x-text="users[0].tickets[0].description">Placeholder</td>
+        </tr>
+    </table>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Ticket</th>
+            <th scope="col">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td x-text="users[0].name">Placeholder</td>
+            <td x-text="users[0].tickets[0].title">Placeholder</td>
+            <td x-text="users[0].tickets[0].description">Placeholder</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td x-text="users[1].name">Placeholder</td>
+            <td x-text="users[1].tickets[0].title">Placeholder</td>
+            <td x-text="users[1].tickets[0].description">Placeholder</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 <h2>Create new user</h2>
