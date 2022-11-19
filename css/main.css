@@ -62,18 +62,9 @@ section {
 }
 
 button {
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 8px 28px;
-  border-radius: 4px;
-  transition: 0.5s;
-  margin-top: 10px;
-  border: 2px solid #fff;
-  color: #fff;
+  background-color: #f8f7f3;
+  color: #ffffff;
+  border: 2px solid #555555;
 }
 
 button:hover {
