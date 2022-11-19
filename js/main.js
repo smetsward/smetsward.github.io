@@ -1,4 +1,10 @@
-function alpineInstance() {
+function allUsers() {
+    return {
+        users: [],
+    }
+}
+
+function allTickets() {
     return {
         tickets: [],
     }
