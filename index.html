@@ -73,11 +73,8 @@
 
 <div x-data="{
         items: {},
-        users: {},
         async getData() {
             this.items = await (await fetch('https://userticket-api-service-smetsward.cloud.okteto.net/items/?skip=0&limit=100')).json();
-            this.users = await (await fetch('https://userticket-api-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')).json();
-
         }
     }">
     <button x-on:click="getData">Get all items</button>
