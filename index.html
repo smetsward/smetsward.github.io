@@ -196,7 +196,7 @@
     </div>
 </section>
 
-<section class="section-bg">
+<!--<section class="section-bg">
     <div class="container">
 
         <div class="section-title">
@@ -252,8 +252,48 @@
             </div>
         </div>
     </div>
-</section>
+</section>-->
 
+<section class="section-bg">
+    <div class="container">
+
+        <div class="section-title">
+            <span>Tickets</span>
+            <h2>Tickets</h2>
+        </div>
+        <div class="h-full bg-gray-200 text-gray-800 p-4 lg:p-8"
+             x-data="alpineInstance()"
+             x-init="fetch('https://userticket-api-service-smetsward.cloud.okteto.net/tickets/?skip=0&limit=100')
+                      .then(response => response.json())
+                      .then(data => tickets = data)">
+
+            <!--            <div class="text-center">-->
+            <!--                <button x-on:click="getData">Get all Tickets</button>-->
+            <!--            </div>-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="icon-box">
+                        <table>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Description</th>
+                            </tr>
+                            <template x-for="tiks in tickets" :key="tiks.id">
+                                <tr>
+                                    <td x-text="tickets.title">Placeholder</td>
+                                    <td x-text="tickets.description">Placeholder</td>
+                                </tr>
+                            </template>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
 <div class="h-full bg-gray-200 text-gray-800 p-4 lg:p-8"
      x-data="alpineInstance()"
      x-init="fetch('https://jsonplaceholder.typicode.com/users')

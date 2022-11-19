@@ -1,5 +1,5 @@
 function alpineInstance() {
   return {
-    users: [],
+    tickets: [],
   }
 }
