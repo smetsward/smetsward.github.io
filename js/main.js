@@ -1,10 +1,9 @@
 function alpineInstance() {
-  return {
-    tickets: [],
-  }
+    return {
+        tickets: [],
+    }
 }
 
 function reload() {
-  log("Reloading...");
-  location.reload(true);
+    location.reload();
 }
