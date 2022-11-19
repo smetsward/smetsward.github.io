@@ -20,6 +20,9 @@
     <button x-on:click="getData">Get all users</button>
     <ul>
         <li><strong x-text="users[0].name">Placeholder</strong></li>
+        <li>Name: <strong x-text="users[0].name">Placeholder</strong>
+            Ticket: <strong x-text="items[0][0].title">Placeholder</strong>
+        </li>
         <li><strong x-text="users[1].name">Placeholder</strong></li>
         <li><strong x-text="users[2].name">Placeholder</strong></li>
         <li><strong x-text="users[3].name">Placeholder</strong></li>
@@ -72,15 +75,22 @@
 <h2>All tickets</h2>
 
 <div x-data="{
-        user_id: {},
+        users: {},
         async getData() {
-            this.user_id = await (await fetch('https://userticket-api-service-smetsward.cloud.okteto.net/users/1')).json();
+            this.items = await (await fetch('https://userticket-api-service-smetsward.cloud.okteto.net/users/1')).json();
         }
     }">
     <button x-on:click="getData">Get all items</button>
     <ul>
-        <li>Name: <strong x-text="user_id[0].name">Placeholder</strong>
-            Ticket: <strong x-text="user_id[0][0].title">Placeholder</strong>
+        <li>Subject: <strong x-text="items[0].title">Placeholder</strong>
+            Description: <strong x-text="items[0].description">Placeholder</strong>
+        </li>
+        <li><strong x-text="items[2].title">Placeholder</strong></li>
+        <li><strong x-text="items[3].title">Placeholder</strong></li>
+        <li><strong x-text="items[4].title">Placeholder</strong></li>
+        <li><strong x-text="items[5].title">Placeholder</strong></li>
+        <li><strong x-text="items[6].title">Placeholder</strong></li>
+        <li><strong x-text="items[7].title">Placeholder</strong></li>
     </ul>
 
 </div>
