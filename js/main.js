@@ -1,0 +1,5 @@
+function alpineInstance() {
+  return {
+    users: [],
+  }
+}
