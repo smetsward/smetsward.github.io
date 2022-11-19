@@ -36,30 +36,34 @@
 
 
     <button x-on:click="getData">Get all users</button>
-    <table class="col-6">
-        <tr>
-            <th>Name</th>
-            <th>Ticket</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td x-text="users[0].name">Placeholder</td>
-            <td x-text="users[0].tickets[0].title">Placeholder</td>
-            <td x-text="users[0].tickets[0].description">Placeholder</td>
-        </tr>
-    </table>
-    <table class="col-6">
-        <tr>
-            <th>Name</th>
-            <th>Ticket</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td x-text="users[0].name">Placeholder</td>
-            <td x-text="users[0].tickets[0].title">Placeholder</td>
-            <td x-text="users[0].tickets[0].description">Placeholder</td>
-        </tr>
-    </table>
+    <div class="container">
+        <div class="row">
+            <table class="col">
+                <tr>
+                    <th>Name</th>
+                    <th>Ticket</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td x-text="users[0].name">Placeholder</td>
+                    <td x-text="users[0].tickets[0].title">Placeholder</td>
+                    <td x-text="users[0].tickets[0].description">Placeholder</td>
+                </tr>
+            </table>
+            <table class="col">
+                <tr>
+                    <th>Name</th>
+                    <th>Ticket</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td x-text="users[0].name">Placeholder</td>
+                    <td x-text="users[0].tickets[0].title">Placeholder</td>
+                    <td x-text="users[0].tickets[0].description">Placeholder</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
     <table class="table">
         <thead>
