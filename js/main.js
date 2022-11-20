@@ -13,3 +13,4 @@ function allTickets() {
 function reload() {
     location.reload();
 }
+

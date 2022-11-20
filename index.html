@@ -193,13 +193,31 @@
 </section>
 
 
-<div x-data="{ title: null, description: null }"
-     x-init=" fetch('https://userticket-api-service-smetsward.cloud.okteto.net/tickets/?skip=0&limit=100')
-        .then(response => response.json())
-        .then(data => { let random = data[Math.floor(Math.random() * data.length)]; tle = random.title; dscrtion = random.description; })">
-    <div>
-        <div x-text="tle"></div>
-        <div x-text="dscrtion"></div>
+<div x-data="allTickets()"
+     x-init="fetch('https://userticket-api-service-smetsward.cloud.okteto.net/tickets/?skip=0&limit=100')
+                      .then(response => response.json())
+                      .then(data => tickets[Math.floor(Math.random() * tickets.length)] = data)">
+
+    <div class="text-center">
+        <button href="#ticket-section" onclick="reload()">Get all Tickets</button>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="icon-box">
+                <table>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Description</th>
+                    </tr>
+                    <template x-for="tiks in tickets" :key="tiks.id">
+                        <tr>
+                            <td x-text="tiks.title">Placeholder</td>
+                            <td x-text="tiks.description">Placeholder</td>
+                        </tr>
+                    </template>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 
