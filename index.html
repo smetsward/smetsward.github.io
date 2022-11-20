@@ -163,13 +163,13 @@
             <span>Tickets</span>
             <h2>Tickets</h2>
         </div>
-        <div x-data="allTickets()"
-             x-init="fetch('https://userticket-api-service-smetsward.cloud.okteto.net/tickets/?skip=0&limit=100')
-                      .then(response => response.json())
-                      .then(data => tickets = data)">
+        <div x-data="{ title: null, description: null }"
+             x-init=" fetch('https://userticket-api-service-smetsward.cloud.okteto.net/tickets/?skip=0&limit=100')
+             .then(response => response.json())
+             .then(data => { let random = data[Math.floor(Math.random() * data.length)]; title = random.title; description = random.description; }) ">
 
             <div class="text-center">
-                <button href="#ticket-section" onclick="reload()">Get all Tickets</button>
+                <button href="#ticket-section" onclick="reload()">Get a random Tickets</button>
             </div>
             <div class="row">
                 <div class="col-lg-12">
@@ -179,12 +179,10 @@
                                 <th>Subject</th>
                                 <th>Description</th>
                             </tr>
-                            <template x-for="tiks in tickets" :key="tiks.id">
-                                <tr>
-                                    <td x-text="tiks.title">Placeholder</td>
-                                    <td x-text="tiks.description">Placeholder</td>
-                                </tr>
-                            </template>
+                            <tr>
+                                <td x-text="title">Placeholder</td>
+                                <td x-text="description">Placeholder</td>
+                            </tr>
                         </table>
                     </div>
                 </div>
@@ -193,16 +191,5 @@
     </div>
 </section>
 
-<div x-data="{ title: null, description: null }"
-     x-init=" fetch('https://userticket-api-service-smetsward.cloud.okteto.net/tickets/?skip=0&limit=100')
-     .then(response => response.json())
-     .then(data => { let random = data[Math.floor(Math.random() * data.length)]; title = random.title; description = random.description; }) ">
-    <div>
-        <div x-text="title"></div>
-        <div x-text="description"></div>
-    </div>
-</div>
-
 </body>
-
 </html>
