@@ -24,14 +24,14 @@
 
         <div x-data="{
         responsedata: null,
-        name: null,
+        email: null,
         password: null,
         async callmethod1() {
             this.responsedata = await (await fetch('https://ticketing-system-frontend-service-smetsward.cloud.okteto.net/users/',
             {
                 method: 'POST',
                 body: JSON.stringify({
-                    name: this.name,
+                    email: this.email,
                     password: this.password
                 }),
                 headers: {
@@ -46,12 +46,12 @@
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" class="form-control" id="name" x-model="name">
+                            <label for="email">Email</label>
+                            <input type="text" email="email" class="form-control" id="email" x-model="email">
                         </div>
                         <div class="form-group col-md-6 mt-3 mt-md-0">
-                            <label for="name">password</label>
-                            <input type="text" class="form-control" name="password" id="password" x-model="password">
+                            <label for="password">password</label>
+                            <input type="text" class="form-control" pass="password" id="password" x-model="password">
                         </div>
                     </div>
                     <div class="text-center">
@@ -83,14 +83,14 @@
                     <div class="icon-box">
                         <table>
                             <tr>
-                                <th>Name</th>
+                                <th>Email</th>
                                 <th>User ID</th>
                                 <th>Ticket</th>
                                 <th>Description</th>
                             </tr>
                             <template x-for="usr in users" :key="usr.id">
                                 <tr>
-                                    <td x-text="usr.name">Placeholder</td>
+                                    <td x-text="usr.email">Placeholder</td>
                                     <td x-text="usr.id">Placeholder</td>
                                     <td x-text="usr.tickets[0].title">Placeholder</td>
                                     <td x-text="usr.tickets[0].description">Placeholder</td>
