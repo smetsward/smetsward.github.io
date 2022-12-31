@@ -42,36 +42,43 @@
             console.log(this.responsedata);
         },
     }">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <label for="email">Email</label>
-                            <input type="text" email="email" class="form-control" id="email" x-model="email">
+            <div class="container">
+
+                <div class="row gy-5 gx-lg-5">
+                    <div class="col-lg-6">
+                        <div class="info">
+
+                            <div class="form-group col-md-12">
+                                <label for="email">Email</label>
+                                <input type="text" email="email" class="form-control" id="email" x-model="email">
+                            </div>
+                            <div class="form-group col-md-12 mt-3 mt-md-0">
+                                <label for="password">password</label>
+                                <input type="text" class="form-control" pass="password" id="password"
+                                       x-model="password">
+                            </div>
                         </div>
-                        <div class="form-group col-md-6 mt-3 mt-md-0">
-                            <label for="password">password</label>
-                            <input type="text" class="form-control" pass="password" id="password" x-model="password">
+                        <div class="text-center">
+                            <button x-on:click="callmethod1">Summit</button>
                         </div>
                     </div>
-                    <div class="text-center">
-                        <button x-on:click="callmethod1">Summit</button>
+                    <div class="col-lg-6">
+                        <div class="info">
+
+                            <div class="form-group col-md-12">
+                                <label for="email">Email</label>
+                                <input type="text" email="email" class="form-control" id="email" x-model="email">
+                            </div>
+                            <div class="form-group col-md-12 mt-3 mt-md-0">
+                                <label for="password">password</label>
+                                <input type="text" class="form-control" pass="password" id="password"
+                                       x-model="password">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button x-on:click="callmethod1">Summit</button>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="row">
-                    <div class="form-group col-md-6">
-                        <label for="email">Email</label>
-                        <input type="text" email="email" class="form-control" id="email" x-model="email">
-                    </div>
-                    <div class="form-group col-md-6 mt-3 mt-md-0">
-                        <label for="password">password</label>
-                        <input type="text" class="form-control" pass="password" id="password" x-model="password">
-                    </div>
-                </div>
-                <div class="text-center">
-                    <button x-on:click="callmethod1">Summit</button>
                 </div>
             </div>
         </div>
