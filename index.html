@@ -25,14 +25,14 @@
         <div x-data="{
         responsedata: null,
         name: null,
-        surname: null,
+        password: null,
         async callmethod1() {
-            this.responsedata = await (await fetch('https://userticket-api-service-smetsward.cloud.okteto.net/users/',
+            this.responsedata = await (await fetch('https://ticketing-system-frontend-service-smetsward.cloud.okteto.net/users/',
             {
                 method: 'POST',
                 body: JSON.stringify({
                     name: this.name,
-                    surname: this.surname
+                    password: this.password
                 }),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
@@ -50,8 +50,8 @@
                             <input type="text" name="name" class="form-control" id="name" x-model="name">
                         </div>
                         <div class="form-group col-md-6 mt-3 mt-md-0">
-                            <label for="name">Surname</label>
-                            <input type="text" class="form-control" name="surname" id="surname" x-model="surname">
+                            <label for="name">password</label>
+                            <input type="text" class="form-control" name="password" id="password" x-model="password">
                         </div>
                     </div>
                     <div class="text-center">
@@ -70,7 +70,7 @@
             <h2>Users</h2>
         </div>
         <div x-data="allUsers()"
-             x-init="fetch('https://userticket-api-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')
+             x-init="fetch('https://ticketing-system-frontend-service-smetsward.cloud.okteto.net/users/?skip=0&limit=100')
                       .then(response => response.json())
                       .then(data => users = data)">
 
