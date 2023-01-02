@@ -160,36 +160,56 @@
                             <button x-on:click="callmethod2">Summit</button>
                         </div>
                     </div>
+                    <div x-data="{
+                    responsedata: null,
+                    model: null,
+                    name: null,
+                    user_id2: null,
+                    async callmethod3() {
+                        this.responsedata = await (await fetch('https://ticketing-system-frontend-service-smetsward.cloud.okteto.net/users/'+ this.user_id2 + '/tickets/',
+                        {
+                            method: 'POST',
+                            body: JSON.stringify({
+                                name: this.name,
+                                model: this.model
+                            }),
+                            headers: {
+                                'Content-type': 'application/json; charset=UTF-8',
+                            },
+                        })).json();
 
-                    <div class="col-lg-6">
-                        <div>
-                            <div class="section-title">
-                                <span>Create product</span>
-                                <h2>Create product</h2>
-                            </div>
+                        console.log(this.responsedata);
+                    }
+                }">
+                        <div class="col-lg-6">
+                            <div>
+                                <div class="section-title">
+                                    <span>Create product</span>
+                                    <h2>Create product</h2>
+                                </div>
 
-                            <div class="form-group col-md-12">
-                                <label for="userid2">User id</label>
-                                <input type="text" name="userid" class="form-control" id="userid2"
-                                       x-model="user_id2">
+                                <div class="form-group col-md-12">
+                                    <label for="userid2">User id</label>
+                                    <input type="text" name="userid" class="form-control" id="userid2"
+                                           x-model="user_id2">
+                                </div>
+                                <div class="form-group col-md-12 mt-3 mt-md-0">
+                                    <label for="userid2">Name</label>
+                                    <input type="text" class="form-control" name="name" id="name" x-model="name">
+                                </div>
+                                <div class="form-group col-md-12 mt-3 mt-md-0">
+                                    <label for="userid2">Model</label>
+                                    <input type="text" class="form-control" name="model" id="model" x-model="model">
+                                </div>
                             </div>
-                            <div class="form-group col-md-12 mt-3 mt-md-0">
-                                <label for="userid2">Name</label>
-                                <input type="text" class="form-control" name="name" id="name" x-model="name">
+                            <div class="text-center">
+                                <button x-on:click="callmethod3">Summit</button>
                             </div>
-                            <div class="form-group col-md-12 mt-3 mt-md-0">
-                                <label for="userid2">Model</label>
-                                <input type="text" class="form-control" name="model" id="model" x-model="model">
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <button x-on:click="callmethod3">Summit</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
 <section id="ticket-section" class="section-bg">
