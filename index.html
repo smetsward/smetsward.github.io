@@ -164,7 +164,7 @@
     </div>
 </section>
 
-<section class="section-bg-2">
+<section class="section-bg">
     <div class="container">
         <div class="section-title">
             <span>Create product</span>
@@ -218,7 +218,7 @@
     </div>
 </section>
 
-<section id="ticket-section" class="section-bg">
+<section id="ticket-section" class="section-bg-2">
     <div class="container">
         <div class="section-title">
             <span>Tickets</span>
@@ -252,7 +252,7 @@
     </div>
 </section>
 
-<section class="section-bg-2">
+<section class="section-bg">
     <div class="container">
         <div class="section-title">
             <span>Get ticket</span>
@@ -294,7 +294,7 @@
     </div>
 </section>
 
-<section class="section-bg">
+<section class="section-bg-2">
     <div class="container">
         <div class="section-title">
             <span>Put ticket</span>
@@ -361,7 +361,7 @@
         title: null,
         description: null,
         ticket_id: null,
-        async callmethod4() {
+        async callmethod5() {
             this.responsedata = await (await fetch('https://ticketing-system-frontend-service-smetsward.cloud.okteto.net/tickets/'+ this.ticket_id,
             {
                 method: 'DELETE',
@@ -387,7 +387,7 @@
                                    x-model="ticket_id">
                         </div>
                         <div class="text-center">
-                            <button x-on:click="callmethod4">Summit</button>
+                            <button x-on:click="callmethod5">Summit</button>
                         </div>
                     </div>
                 </div>
