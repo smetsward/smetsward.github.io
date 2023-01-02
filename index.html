@@ -42,24 +42,24 @@
             console.log(this.responsedata);
         },
     }">
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <label for="email">Email</label>
-                            <input type="text" email="email" class="form-control" id="email" x-model="email">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="password">password</label>
-                            <input type="password" class="form-control" pass="password" id="password"
-                                   x-model="password">
-                        </div>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <input type="text" email="email" class="form-control" id="email" x-model="email">
                     </div>
-                    <div class="text-center">
-                        <button x-on:click="callmethod1">Summit</button>
+                    <div class="form-group col-md-6">
+                        <label for="password">password</label>
+                        <input type="password" class="form-control" pass="password" id="password"
+                               x-model="password">
                     </div>
+                </div>
+                <div class="text-center">
+                    <button x-on:click="callmethod1">Summit</button>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </section>
 
@@ -111,8 +111,13 @@
 
 <section class="section-bg-2">
     <div class="container">
+        <div>
+            <div class="section-title">
+                <span>Create ticket</span>
+                <h2>Create ticket</h2>
+            </div>
 
-        <div x-data="{
+            <div x-data="{
         responsedata: null,
         title: null,
         description: null,
@@ -133,14 +138,9 @@
             console.log(this.responsedata);
         }
     }">
-            <div class="container">
-                <div class="row gy-5 gx-lg-5">
+                <div class="container">
                     <div class="col-lg-12">
-                        <div>
-                            <div class="section-title">
-                                <span>Create ticket</span>
-                                <h2>Create ticket</h2>
-                            </div>
+                        <div class="row">
 
                             <div class="form-group col-md-6">
                                 <label for="userid">User id</label>
