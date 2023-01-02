@@ -252,5 +252,60 @@
     </div>
 </section>
 
+<section class="section-bg-2">
+    <div class="container">
+        <div class="section-title">
+            <span>Put ticket</span>
+            <h2>Put ticket</h2>
+        </div>
+
+        <div x-data="{
+        responsedata: null,
+        title: null,
+        description: null,
+        user_id: null,
+        async callmethod4() {
+            this.responsedata = await (await fetch('https://ticketing-system-frontend-service-smetsward.cloud.okteto.net/tickets/'+ this.user_id,
+            {
+                method: 'PUT',
+                body: JSON.stringify({
+                    title: this.title,
+                    description: this.description
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })).json();
+
+            console.log(this.responsedata);
+        }
+    }">
+            <div class="container">
+                <div class="col-lg-12">
+                    <div class="row">
+
+                        <div class="form-group col-md-6">
+                            <label for="userid3">User id</label>
+                            <input type="text" name="userid" class="form-control" id="userid3"
+                                   x-model="user_id">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="userid3">Subject</label>
+                            <input type="text" class="form-control" name="subject2" id="subject2" x-model="title">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12 mt-3 mt-md-0">
+                        <label for="userid3">Message</label>
+                        <input class="form-control" name="message" rows="1" x-model="description">
+                    </div>
+                    <div class="text-center">
+                        <button x-on:click="callmethod4">Summit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 </body>
 </html>
