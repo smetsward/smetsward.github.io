@@ -349,5 +349,51 @@
     </div>
 </section>
 
+<section class="section-bg">
+    <div class="container">
+        <div class="section-title">
+            <span>Delete ticket</span>
+            <h2>Delete ticket</h2>
+        </div>
+
+        <div x-data="{
+        responsedata: null,
+        title: null,
+        description: null,
+        ticket_id: null,
+        async callmethod4() {
+            this.responsedata = await (await fetch('https://ticketing-system-frontend-service-smetsward.cloud.okteto.net/tickets/'+ this.ticket_id,
+            {
+                method: 'DELETE',
+                body: JSON.stringify({
+                    title: this.title,
+                    description: this.description
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })).json();
+
+            console.log(this.responsedata);
+        }
+    }">
+            <div class="container">
+                <div class="col-lg-12">
+                    <div class="row">
+
+                        <div class="form-group col-md-6">
+                            <label for="ticket_id">Ticket id</label>
+                            <input type="text" name="userid" class="form-control" id="ticket_id"
+                                   x-model="ticket_id">
+                        </div>
+                    <div class="text-center">
+                        <button x-on:click="callmethod4">Summit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 </body>
 </html>
