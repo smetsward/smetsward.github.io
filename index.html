@@ -279,10 +279,10 @@
                             </tr>
                             <template x-for="tkt in users" :key="tkt.id">
                                 <tr>
-                                    <td x-text="tkt.tickets[0].title">Placeholder</td>
-                                    <td x-text="tkt.tickets[0].description">Placeholder</td>
-                                    <td x-text="tkt.products[0].id">Placeholder</td>
-                                    <td x-text="tkt.products[0].ticket_owner_id">Placeholder</td>
+                                    <td x-text="tkt.tickets.title">Placeholder</td>
+                                    <td x-text="tkt.tickets.description">Placeholder</td>
+                                    <td x-text="tkt.products.id">Placeholder</td>
+                                    <td x-text="tkt.products.ticket_owner_id">Placeholder</td>
 
                                 </tr>
                             </template>
