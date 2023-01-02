@@ -4,6 +4,11 @@ function allUsers() {
     }
 }
 
+function allTickets() {
+    return {
+        tickets: [],
+    }
+}
 function reload() {
     location.reload();
 }

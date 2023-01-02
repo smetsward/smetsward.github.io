@@ -258,10 +258,10 @@
             <span>Get ticket</span>
             <h2>Get ticket</h2>
         </div>
-        <div x-data="allUsers()"
+        <div x-data="allTickets()"
              x-init="fetch('https://ticketing-system-frontend-service-smetsward.cloud.okteto.net/tickets/?skip=0&limit=100')
                       .then(response => response.json())
-                      .then(data => users = data)">
+                      .then(data => tickets = data)">
 
             <div class="text-center">
                 <button href="#user-section" onclick="reload()">Get all tickets</button>
@@ -277,7 +277,7 @@
                                 <th>Id</th>
                                 <th>Ticket_owner_id</th>
                             </tr>
-                            <template x-for="tkt in users" :key="tkt.id">
+                            <template x-for="tkt in tickets" :key="tkt.id">
                                 <tr>
                                     <td x-text="tkt.tickets.title">Placeholder</td>
                                     <td x-text="tkt.tickets.description">Placeholder</td>
