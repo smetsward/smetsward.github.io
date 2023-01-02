@@ -134,7 +134,7 @@
             console.log(this.responsedata);
         },
     }">
-<!--            <div x-data="{
+            <div x-data="{
         responsedata: null,
         name: null,
         model: null,
@@ -144,8 +144,8 @@
             {
                 method: 'POST',
                 body: JSON.stringify({
-                    title: this.title,
-                    description: this.description
+                    name: this.name,
+                    model: this.model
                 }),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
@@ -154,7 +154,7 @@
 
             console.log(this.responsedata);
         },
-    }">-->
+    }">
                 <div class="container">
 
                     <div class="row gy-5 gx-lg-5">
@@ -188,16 +188,16 @@
                             </div>
                             <div>
                                 <div class="form-group col-md-12">
-                                    <label for="userid">User id</label>
-                                    <input type="text" name="userid" class="form-control" id="userid" x-model="user_id">
+                                    <label for="userid2">User id</label>
+                                    <input type="text" name="userid" class="form-control" id="userid2" x-model="user_id">
                                 </div>
                                 <div class="form-group col-md-12 mt-3 mt-md-0">
-                                    <label for="userid">Name</label>
-                                    <input type="text" class="form-control" name="name" id="name" x-model="title">
+                                    <label for="userid2">Name</label>
+                                    <input type="text" class="form-control" name="name" id="name" x-model="name">
                                 </div>
                                 <div class="form-group col-md-12 mt-3 mt-md-0">
-                                    <label for="userid">Model</label>
-                                    <input type="text" class="form-control" name="model" id="model" x-model="title">
+                                    <label for="userid2">Model</label>
+                                    <input type="text" class="form-control" name="model" id="model" x-model="model">
                                 </div>
                             </div>
                             <div class="text-center">
