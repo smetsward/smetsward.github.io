@@ -7,10 +7,19 @@ aanmaken vervolgens kunt u een random ticket opvragen. U kunt een ticket verande
 
 # API - Links Host de front-end op Netlify. 
 
-- GitHub repository voor de API: https://github.com/smetsward/API
+- GitHub repository voor de API: https://github.com/smetsward/ticketing-system
 - GitHub repository voor de front-end: https://github.com/smetsward/smetsward.github.io
-- hosted API link: https://userticket-api-service-smetsward.cloud.okteto.net/
+- GitHub repository voor de API Mongodb: https://github.com/smetsward/fastapi-mongodb
+- GitHub repository voor de API zonder auth: https://github.com/smetsward/ticketing-system-frontend
+
+- hosted API link: https://ticketing-system-service-smetsward.cloud.okteto.net
+- hosted API link zonder auth: https://ticketing-system-frontend-service-smetsward.cloud.okteto.net
 - hosted front-end link: https://smetsward.github.io/
+- hosted front-end on Netlify link: https://userticket-api-service-smetsward.cloud.okteto.net/
+
+- hosted OpenAPI docs link: https://ticketing-system-service-smetsward.cloud.okteto.net/docs
+- hosted OpenAPI docs link zonder auth: https://ticketing-system-frontend-service-smetsward.cloud.okteto.net/docs
+- hosted OpenAPI docs link Mongodb: https://system-service-fastapi-mongodb-smetsward.cloud.okteto.net/docs
 
 # API - front-end
 
