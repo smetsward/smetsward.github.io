@@ -5,6 +5,13 @@ aanmaken en als laatste kunt een random ticket opvragen.
 
 ![23](https://user-images.githubusercontent.com/69649743/202899672-0ba799bf-826c-4d3e-83f4-a33aa1db53e4.JPG)
 
+# API - Links Host de front-end op Netlify. 
+
+- GitHub repository voor de API: https://github.com/smetsward/API
+- GitHub repository voor de front-end: https://github.com/smetsward/smetsward.github.io
+- hosted API link: https://userticket-api-service-smetsward.cloud.okteto.net/
+- hosted front-end link: https://smetsward.github.io/
+
 # API - front-end
 
 ![1](https://user-images.githubusercontent.com/69649743/211143724-42c930d1-35e5-4979-a092-e8adc3e05e24.JPG)
@@ -14,10 +21,5 @@ aanmaken en als laatste kunt een random ticket opvragen.
 
 ![3](https://user-images.githubusercontent.com/69649743/211144115-59da02bc-b9d8-407c-acde-bced0326112a.PNG)
 
-# API - Links Host de front-end op Netlify. 
 
-- GitHub repository voor de API: https://github.com/smetsward/API
-- GitHub repository voor de front-end: https://github.com/smetsward/smetsward.github.io
-- hosted API link: https://userticket-api-service-smetsward.cloud.okteto.net/
-- hosted front-end link: https://smetsward.github.io/
 
